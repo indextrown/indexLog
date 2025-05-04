@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Kim Donghyeon</h1>
+            <p>iOS Developer & Computer Science Enthusiast</p>
+            <p>실행을 통한 배움을 중요시하는 개발자입니다. 앱 기획부터 개발까지 직접 경험하며, 사용자 중심의 서비스를 만듭니다.</p>
+            <div class="hero-links">
+                <a href="https://github.com/indextrown" class="cta-button" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:indextrown@gmail.com" class="cta-button">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <!-- 프로젝트 카드들이 여기에 동적으로 로드됩니다 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3 class="modal-title">Project Title</h3>
+                <div class="modal-tags"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image"></div>
+                <div class="modal-info">
+                    <p class="modal-description"></p>
+                    <div class="modal-features">
+                        <h4>주요 기능</h4>
+                        <ul class="features-list"></ul>
+                    </div>
+                    <div class="modal-links">
+                        <a href="#" class="modal-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Live Demo
+                        </a>
+                        <a href="#" class="modal-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>iOS Development Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-apple skill-icon"></i>
+                    <h3 class="skill-title">iOS Development</h3>
+                    <p class="skill-description">Swift, SwiftUI, UIKit, Auto Layout</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database skill-icon"></i>
+                    <h3 class="skill-title">Data Management</h3>
+                    <p class="skill-description">CoreData, Realm, Firebase</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-mobile-alt skill-icon"></i>
+                    <h3 class="skill-title">UI/UX Design</h3>
+                    <p class="skill-description">Human Interface Guidelines, Auto Layout, Accessibility</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h3 class="skill-title">Development Tools</h3>
+                    <p class="skill-description">Xcode, Git, CocoaPods, Swift Package Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="blog-header">
+                <h2>Blog Posts</h2>
+                <div class="blog-categories">
+                    <div class="blog-category active">All</div>
+                    <div class="blog-category">📱 iOS</div>
+                    <div class="blog-category">💻 Swift</div>
+                    <div class="blog-category">🎨 UI/UX</div>
+                    <div class="blog-category">📱 SwiftUI</div>
+                    <div class="blog-category">🔧 Architecture</div>
+                </div>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://via.placeholder.com/800x400')"></div>
+                    <div class="blog-content">
+                        <div class="blog-category-tag">📱 iOS</div>
+                        <div class="blog-date">2024.03.15</div>
+                        <h3 class="blog-title">SwiftUI에서 MVVM 아키텍처 구현하기</h3>
+                        <p class="blog-excerpt">SwiftUI와 MVVM 아키텍처를 활용하여 깔끔하고 확장 가능한 iOS 앱을 만드는 방법을 알아보겠습니다. 코드 예제와 함께 단계별로 설명합니다.</p>
+                        <div class="blog-author">
+                            <img src="https://via.placeholder.com/40" alt="Author">
+                            <span>김동현</span>
+                        </div>
+                        <a href="blog-detail.html?id=swiftui-mvvm" class="blog-link" target="_blank">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://via.placeholder.com/800x400')"></div>
+                    <div class="blog-content">
+                        <div class="blog-category-tag">💻 Swift</div>
+                        <div class="blog-date">2024.03.10</div>
+                        <h3 class="blog-title">SwiftUI로 만드는 모던한 iOS 앱</h3>
+                        <p class="blog-excerpt">SwiftUI를 활용한 모던한 iOS 앱 개발 방법과 최신 트렌드를 소개합니다. 실전 예제와 함께 배워봅니다.</p>
+                        <div class="blog-author">
+                            <img src="https://via.placeholder.com/40" alt="Author">
+                            <span>김동현</span>
+                        </div>
+                        <a href="blog-detail.html?id=swiftui-modern-app" class="blog-link" target="_blank">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://via.placeholder.com/800x400')"></div>
+                    <div class="blog-content">
+                        <div class="blog-category-tag">🎨 UI/UX</div>
+                        <div class="blog-date">2024.03.05</div>
+                        <h3 class="blog-title">iOS 앱의 접근성(Accessibility) 구현 가이드</h3>
+                        <p class="blog-excerpt">VoiceOver, Dynamic Type, 색상 대비 등 iOS의 접근성 기능을 구현하는 방법을 알아봅니다. 모든 사용자를 위한 앱을 만드는 방법을 배워봅시다.</p>
+                        <div class="blog-author">
+                            <img src="https://via.placeholder.com/40" alt="Author">
+                            <span>김동현</span>
+                        </div>
+                        <a href="blog-detail.html?id=ios-accessibility" class="blog-link" target="_blank">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://via.placeholder.com/800x400')"></div>
+                    <div class="blog-content">
+                        <div class="blog-category-tag">🔧 Architecture</div>
+                        <div class="blog-date">2024.03.01</div>
+                        <h3 class="blog-title">Clean Architecture in iOS: 실전 적용 가이드</h3>
+                        <p class="blog-excerpt">Clean Architecture를 iOS 앱에 적용하는 방법을 단계별로 설명합니다. 테스트 가능하고 유지보수가 쉬운 코드를 작성하는 방법을 배워봅니다.</p>
+                        <div class="blog-author">
+                            <img src="https://via.placeholder.com/40" alt="Author">
+                            <span>김동현</span>
+                        </div>
+                        <a href="blog-detail.html?id=clean-architecture" class="blog-link" target="_blank">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Blog Modal -->
+    <div class="blog-modal">
+        <div class="blog-modal-content">
+            <div class="blog-modal-header">
+                <span class="blog-modal-category"></span>
+                <h3 class="blog-modal-title"></h3>
+                <div class="blog-modal-meta">
+                    <span class="blog-modal-date"></span>
+                    <span class="blog-modal-author"></span>
+                </div>
+                <button class="close-blog-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="blog-modal-body">
+                <div class="blog-modal-image"></div>
+                <div class="blog-modal-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/projects.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
