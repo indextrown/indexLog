@@ -1,0 +1,38 @@
+[
+  {
+    "id": "swiftui-mvvm",
+    "title": "SwiftUI에서 MVVM 아키텍처 구현하기",
+    "date": "2024.03.15",
+    "category": "📱 iOS",
+    "author": "김동현",
+    "image": "https://via.placeholder.com/800x400",
+    "excerpt": ""
+  },
+  {
+    "id": "swiftui-modern-app",
+    "title": "SwiftUI로 만드는 모던한 iOS 앱",
+    "category": "💻 Swift",
+    "date": "2024.03.10",
+    "author": "김동현",
+    "image": "https://via.placeholder.com/800x400",
+    "excerpt": ""
+  },
+  {
+    "id": "ios-accessibility",
+    "title": "iOS 앱의 접근성(Accessibility) 구현 가이드",
+    "category": "🎨 UI/UX",
+    "date": "2024.03.05",
+    "author": "김동현",
+    "image": "https://via.placeholder.com/800x400",
+    "excerpt": ""
+  },
+  {
+    "id": "clean-architecture",
+    "title": "Clean Architecture in iOS: 실전 적용 가이드",
+    "category": "🔧 Architecture",
+    "date": "2024.03.01",
+    "author": "김동현",
+    "image": "https://via.placeholder.com/800x400",
+    "excerpt": ""
+  }
+]

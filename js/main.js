@@ -204,74 +204,34 @@ const blogCards = document.querySelectorAll('.blog-card');
 const blogCategories = document.querySelectorAll('.blog-category');
 const blogGrid = document.querySelector('.blog-grid');
 
-// Load blog posts from markdown files
+// Load blog posts from JSON index
 async function loadBlogPosts() {
     try {
-        // Get list of markdown files from _posts directory
-        const response = await fetch('_posts/');
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const links = Array.from(doc.querySelectorAll('a'))
-            .map(a => a.href)
-            .filter(href => href.endsWith('.md'))
-            .map(href => href.split('/').pop().replace('.md', ''));
-        
+        const response = await fetch('_posts/index.json');
+        if (!response.ok) throw new Error('Failed to fetch blog index');
+        const posts = await response.json();
+
         // Clear existing blog cards
         blogGrid.innerHTML = '';
-        
-        // Create blog cards
-        links.forEach(blogId => {
-            fetch(`_posts/${blogId}.md`)
-                .then(response => response.text())
-                .then(markdown => {
-                    // Extract metadata from markdown
-                    const metadata = {};
-                    const lines = markdown.split('\n');
-                    let inMetadata = false;
-                    
-                    for (const line of lines) {
-                        if (line.trim() === '---') {
-                            inMetadata = !inMetadata;
-                            if (!inMetadata) break;
-                            continue;
-                        }
-                        
-                        if (inMetadata) {
-                            const match = line.match(/^([^:]+):\s*(.+)$/);
-                            if (match) {
-                                const key = match[1].trim();
-                                const value = match[2].trim();
-                                metadata[key] = value;
-                            }
-                        }
-                    }
-                    
-                    // Extract excerpt (first paragraph after metadata)
-                    const content = markdown.split('---')[2].trim();
-                    const excerpt = content.split('\n\n')[0].replace(/#/g, '').trim();
-                    
-                    const card = document.createElement('div');
-                    card.className = 'blog-card';
-                    card.innerHTML = `
-                        <div class="blog-image" style="background-image: url('${metadata.image || 'https://via.placeholder.com/800x400'}')"></div>
-                        <div class="blog-content">
-                            <div class="blog-category-tag">${metadata.category || 'Uncategorized'}</div>
-                            <div class="blog-date">${metadata.date || 'No date'}</div>
-                            <h3 class="blog-title">${metadata.title || 'Untitled'}</h3>
-                            <p class="blog-excerpt">${excerpt || 'No excerpt available'}</p>
-                            <div class="blog-author">
-                                <img src="https://via.placeholder.com/40" alt="Author">
-                                <span>${metadata.author || 'Unknown'}</span>
-                            </div>
-                            <a href="blog-detail.html?id=${blogId}" class="blog-link" target="_blank">Read More <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    `;
-                    blogGrid.appendChild(card);
-                })
-                .catch(error => {
-                    console.error('Error loading blog post:', error);
-                });
+
+        posts.forEach(post => {
+            const card = document.createElement('div');
+            card.className = 'blog-card';
+            card.innerHTML = `
+                <div class="blog-image" style="background-image: url('${post.image || 'https://via.placeholder.com/800x400'}')"></div>
+                <div class="blog-content">
+                    <div class="blog-category-tag">${post.category || 'Uncategorized'}</div>
+                    <div class="blog-date">${post.date || 'No date'}</div>
+                    <h3 class="blog-title">${post.title || 'Untitled'}</h3>
+                    <p class="blog-excerpt">${post.excerpt || 'No excerpt available'}</p>
+                    <div class="blog-author">
+                        <img src="https://via.placeholder.com/40" alt="Author">
+                        <span>${post.author || 'Unknown'}</span>
+                    </div>
+                    <a href="blog-detail.html?id=${post.id}" class="blog-link" target="_blank">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            `;
+            blogGrid.appendChild(card);
         });
     } catch (error) {
         console.error('Error loading blog posts:', error);

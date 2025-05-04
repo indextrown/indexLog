@@ -1,8 +1,8 @@
 ---
-title: Clean Architecture in iOS: 실전 적용 가이드
-category: 🔧 Architecture
+title: "Clean Architecture in iOS: 실전 적용 가이드"
+category: "🔧 Architecture"
 date: 2024.03.01
-author: 김동현
+author: "김동현"
 image: https://via.placeholder.com/800x400
 ---
 
